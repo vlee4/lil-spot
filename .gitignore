@@ -1,2 +1,8 @@
+# packages
 /node_modules
+
+# environment
 .env
+
+# generated files
+/public/main.js
