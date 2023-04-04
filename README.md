@@ -39,3 +39,8 @@ In the terminal run, `npm run start`. The server will run on
    ```
 
 4. When you navigate to `http://localhost:3000/spotify`, you should get a response for with details about the artist, Radiohead (which is hardcoded for now).
+
+## References
+
+- [Getting Started with (Spotify) Web API](https://developer.spotify.com/documentation/web-api/tutorials/getting-started)
+- [Create React App without Create React App](https://blog.bitsrc.io/create-react-app-without-create-react-app-b0a5806a92)
