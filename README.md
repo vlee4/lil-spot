@@ -2,12 +2,7 @@
 
 A little Spotify web application made during MLH's Global Hack Week: API's
 
-## Run Server
-
-In the terminal run, `npm run start`. The server will run on
-`http://localhost:3000/`.
-
-# Generate a new Spotify token
+## Generate a new Spotify token
 
 1. Create a new .env file in the root directory
 2. In the terminal run the following:
@@ -39,6 +34,17 @@ In the terminal run, `npm run start`. The server will run on
    ```
 
 4. When you navigate to `http://localhost:3000/spotify`, you should get a response for with details about the artist, Radiohead (which is hardcoded for now).
+
+## Run Server
+
+In the terminal run, `npm run start`. The server will run on
+`http://localhost:3000/`.
+
+## Run (frontend) React app
+
+In a separte terminal run, `npm run dev`. This will start the webpack dev server at `http://localhost:9500/`.
+
+**Note**: Currently both servers need to be running in order for the React app to call the backend server and get Spotify data.
 
 ## References
 
