@@ -13,11 +13,13 @@ app.use(express.json())
 app.use(cors())
 
 app.get("/", (req, res)=> {
+    console.log("here!!")
     res.sendFile(path.join(__dirname+'/public/index.html'))
 })
 
 //Note: SPOTIFY_URL is hardcoded to hit the "Get Artist" endpoint on Spotify for "Radiohead"
-app.get("/spotify", async (req, res)=> {
+app.get("/api/spotify", async (req, res)=> {
+    console.log("hit spotify route")
     try{
         const url = process.env.SPOTIFY_URL
         const token = process.env.SPOTIFY_ACCESS_TOKEN
