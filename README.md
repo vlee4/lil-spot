@@ -15,7 +15,7 @@ In the terminal run, `npm run start`. The server will run on
    ```
    curl -X POST "https://accounts.spotify.com/api/token" \
        -H "Content-Type: application/x-www-form-urlencoded" \
-       -d "grant_type=client_credentials&client_id=your-client-id&client_secret=your-client-secret
+       -d "grant_type=client_credentials&client_id=your-client-id&client_secret=your-client-secret"
    ```
 
    **Note**: Make sure to replace `your-client-id` with your own Spotify client id and `your-client-secret` with your own Spotify client secret. These can be found in thru the Dashboard of your created app on the [Spotify for Developers](https://developer.spotify.com/) platform.
@@ -34,8 +34,8 @@ In the terminal run, `npm run start`. The server will run on
 
 3. Copy the value for the outputted access token from the previous step and input that value into `.env`.
 
-```
-SPOTIFY_ACCESS_TOKEN="SpotifyAccessTokenGoesHere"
-```
+   ```
+   SPOTIFY_ACCESS_TOKEN="SpotifyAccessTokenGoesHere"
+   ```
 
 4. When you navigate to `http://localhost:3000/spotify`, you should get a response for with details about the artist, Radiohead (which is hardcoded for now).
