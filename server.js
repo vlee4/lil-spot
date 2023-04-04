@@ -1,10 +1,38 @@
+require('dotenv').config()
 const express = require('express');
-const app = express();
+const cors = require('cors');
 const path = require('path');
-const PORT = 3000;
+const axios = require('axios');
+
+const PORT = process.env.PORT || 5000;
+
+const app = express();
+//parse requests with JSON payloads
+app.use(express.json())
+//enables cors for all reqs by cors middleware
+app.use(cors())
 
 app.get("/", (req, res)=> {
     res.sendFile(path.join(__dirname+'/public/index.html'))
+})
+
+//Note: SPOTIFY_URL is hardcoded to hit the "Get Artist" endpoint on Spotify for "Radiohead"
+app.get("/spotify", async (req, res)=> {
+    try{
+        const url = process.env.SPOTIFY_URL
+        const token = process.env.SPOTIFY_ACCESS_TOKEN
+      
+        const {data} = await axios.get(url, {
+          headers: {
+              "Authorization": `Bearer ${token}`
+          }
+        })
+
+        res.send(data)
+    } catch(error){
+        console.log("Error getting Spotify response:", error)
+        res.end()
+    }
 })
 
 app.listen(PORT, () => {
